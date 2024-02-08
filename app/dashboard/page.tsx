@@ -135,11 +135,30 @@ export default function Dashboard() {
             <div>
               {auctions.length > 0 ? (
                 <>
-                  {auctions.map((auction) => (
-                    <div>
-                      <p>{auction.auctionName}</p>
-                    </div>
-                  ))}
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Auction Name</th>
+                        <th>Auction Date</th>
+                        <th>No of players</th>
+                        <th>Points per team</th>
+                        <th>Minimum bid</th>
+                        <th>Increase factor</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {auctions.map((auction) => (
+                        <tr>
+                          <td>{auction.auctionName}</td>
+                          <td>{auction.auctionDate}</td>
+                          <td>{auction.players}</td>
+                          <td>{auction.pointsPerTeam}</td>
+                          <td>{auction.minimumBid}</td>
+                          <td>{auction.increaseFactor}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </>
               ) : (
                 <>
